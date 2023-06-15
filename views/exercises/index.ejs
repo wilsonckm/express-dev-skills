@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <h1>Exercises</h1>
+    <ul>
+      <% exercises.forEach(function(e) { %>
+        <li>
+            <a href="/exercises/<%= e.id %>"><%= e.exercise %> </a>
+            - 
+          <%= e.done ? 'done' : 'not done' %>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
