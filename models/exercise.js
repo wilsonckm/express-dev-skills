@@ -7,6 +7,8 @@ const exercises = [
 module.exports = {
     getAll,
     getOne,
+    create,
+    deleteExercise,
 };
 
 function getAll() {
@@ -18,5 +20,14 @@ function getOne(id) {
     return exercises.find(exercise => exercise.id === id);
 }
 
+function create(exercise) {
+    exercise.id = Date.now() % 1000000;
+    exercise.done = false;
+    exercises.push(exercise);
+}
 
-
+function deleteExercise(id){
+    id = parseInt(id);
+    const ex = exercises.findIndex(exercise => exercise.id === id);
+    exercises.splice(ex, 1);
+}

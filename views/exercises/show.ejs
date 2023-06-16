@@ -10,5 +10,8 @@
         <h3><%= exercise.exercise %></h3>
         <h3>Complete: <%= exercise.done ? 'Yes' : 'No' %></h3>
     </ul>
+    <form action="/exercises/<%= exercise.id %>?_method=Delete" method="POST">
+      <button type="submit">Delete exercise</button>
+    </form>
   </body>
 </html>
